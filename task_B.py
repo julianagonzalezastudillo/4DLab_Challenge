@@ -282,37 +282,3 @@ for i in range(len(B.columns)):
 
 plt.savefig("figures/B_pair_plot_cluster.png", transparent=True, bbox_inches='tight')
 plt.show()
-
-#%%
-# from sklearn.cluster import AgglomerativeClustering
-# from scipy.cluster.hierarchy import dendrogram, linkage
-#
-# # Step 1: Perform hierarchical clustering using Ward's method
-# ward_clustering = AgglomerativeClustering(n_clusters=3, linkage='ward')
-# cluster_labels = ward_clustering.fit_predict(B)
-#
-# # Step 2: Add cluster labels to the DataFrame (optional, for reference)
-# # B_pca['Cluster'] = cluster_labels
-#
-# # Step 3: Visualize the dendrogram to see the clustering hierarchy
-# # Calculate the linkage matrix for the dendrogram
-# Z = linkage(B, method='ward')
-#
-# # Plot the dendrogram
-# plt.figure(figsize=(12, 6))
-# dendrogram(Z, truncate_mode='level', p=5, show_leaf_counts=False)
-# plt.title("Ward Hierarchical Clustering Dendrogram")
-# plt.xlabel("Sample Index or (Cluster Size)")
-# plt.ylabel("Distance")
-# plt.show()
-#
-# # Step 4: Visualize clusters with a scatter plot for first two cognitive variables
-# plt.figure(figsize=(8, 6))
-#
-# plt.scatter(B.values[:, 0], B.values[:, 1], c=cluster_labels, cmap='viridis', alpha=0.6)
-# plt.title("Scatter Plot of Subjects Grouped by Ward Clustering Labels")
-# plt.xlabel("First Cognitive Variable (Standardized)")
-# plt.ylabel("Second Cognitive Variable (Standardized)")
-# plt.colorbar(label="Cluster Label")
-# plt.show()
-
