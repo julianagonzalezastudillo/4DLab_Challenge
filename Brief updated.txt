@@ -1,0 +1,18 @@
+You have been provided with the two completely simulated datasets, A and B.  
+
+A = 80 subjects x 148 brain regions, where each element corresponds to a statistical property of that brain region.  
+B = 4000 subjects x 7 cognitive variables, where each element corresponds to a cognitive test Z-score.  
+
+In a programming language of your choice, and using any libraries/toolboxes that you would like, please complete the following analysis steps. At the interview, you will be asked briefly to present your findings in a 5 minute slot. We would recommend doing this via PowerPoint, but it can be flexible (e.g. Jupyter Notebooks and similar interfaces are fine). You will be able to share your screen with us, so also have your code to hand as you might like to show us how you did it. 
+
+Task A
+1. Produce a simple visualisation of A.
+2. Produce a visualisation of the distribution of A, across the whole sample. What distribution does it look like? Do you think this distribution is a fair representation of individual distributions within the sample?
+3. Across the different brain regions the values are different. But are these differences that you would expect by chance or is there something significant going on? Run any analyses of your choice to test whether you think the differences across brain regions are meaningful, or just the result of the variability you’d expect in any large dataset.
+
+Task B  
+1. Produce a simple visualisation of B.
+2. Produce a simple visualisation of the distributions of each cognitive variable. Are there any interesting differences across the variables? 
+3. Run a principal component analysis on B. Plot the explained variances of the first three components. Provide a scatter plot of the scores of the first two components. What does this tell you about the simulated dataset? 
+4. Run a clustering analysis of your choice on the data. What does this tell you about B?
+
