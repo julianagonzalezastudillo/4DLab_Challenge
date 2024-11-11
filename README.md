@@ -19,21 +19,23 @@ The project is structured to address specific analytical tasks across both datas
    - A heatmap shows the values across all subjects and brain regions, providing an overview of the distribution and variability across the matrix.
 
 2. **Distribution Analysis of Dataset A**:
-   - The distribution of values across the entire dataset is visualized and assessed for its shape (e.g., normality) using histograms and normality tests.
-   - **Goal**: Determine if the distribution across all values fairly represents individual distributions within the dataset.
+   - The distribution of values across the entire dataset is visualized and assessed for its shape (e.g., normality) using histograms and normality tests. 
+   - Considering the variability across regions two visualizations are provided: one of the hole flatten samples, and a second one across each brain region.
 
-3. **Statistical Significance of Brain Region Differences**:
-   - Statistical tests (e.g., ANOVA) are conducted to evaluate if the observed differences between brain regions are statistically significant.
-   - **Goal**: Assess whether differences across regions are meaningful or a result of random variability.
+4. **Statistical Significance of Brain Region Differences**:
+   - Two possible statistical tests (ANOVA, and pairwise t-test Bonferroni corrected for multiple comparisons) are conducted to evaluate if the observed differences between brain regions are statistically significant. Resulting p-values are plot on a matrix.
+
 
 ### Task B: Analysis of Cognitive Data (Dataset B)
 
 1. **Visualization of Dataset B**:
-   - A pair plot visualizes relationships between cognitive variables, providing insights into any observable patterns.
+   - A pair plot visualizes relationships between cognitive variables also approximated by a regression line, providing insights into any observable patterns (lower triangular matrix).
+   - A heatmap of the pearson correlation across cognitive variables (upper triangular matrix).
+   - Each cognitive variable histogram distribution (matrix diagonal).
+   - A spring-layout correlation network, in which edges represent the correlation weight across cognitive variables.
 
 2. **Distribution of Cognitive Variables**:
-   - Histograms or box plots show the distribution for each cognitive variable, highlighting any differences in their distributions.
-   - **Goal**: Identify if certain cognitive variables have unique characteristics or variability.
+   - KDE plots show the distribution for each cognitive variable.
 
 3. **Principal Component Analysis (PCA)**:
    - PCA is applied to reduce dimensionality and identify key components that capture the majority of the variance in the dataset.
@@ -43,8 +45,10 @@ The project is structured to address specific analytical tasks across both datas
    - **Goal**: Interpret the underlying structure of cognitive data and understand the main factors that capture data variability.
 
 4. **Clustering Analysis**:
-   - A clustering algorithm (e.g., K-means) is applied to identify groups of subjects based on cognitive variables.
-   - **Output**: A scatter plot of the first two PCA components, colored by cluster assignments.
+   - A clustering algorithm (K-means) is applied to identify groups of subjects based on cognitive variables.
+   - **Output**: 
+     - A scatter plot of the first two PCA components, colored by cluster assignments.
+     - An updated pair plot between cognitive variables showing the identify clusters and its distribution.
    - **Goal**: Determine if there are distinct groups in the data that could reflect different cognitive profiles.
 
 ---
@@ -54,7 +58,7 @@ The project is structured to address specific analytical tasks across both datas
 - `task_A.py`: python script containing the full analysis for task A.
 - `task_B.py`: python script containing the full analysis for task B.
 - `README.md`: Project overview and instructions (this file).
-- `data/`: Folder where Dataset A and Dataset B should be placed (ensure the datasets are in the correct format for analysis).
+- `data/`: Folder where Dataset A and Dataset B should be placed.
 - `figures/`: Folder where output plots will be saved.
 
 ---
@@ -63,16 +67,11 @@ The project is structured to address specific analytical tasks across both datas
 
 - Python 3.7 or higher
 - Recommended libraries:
-  - `pandas`
-  - `numpy`
-  - `matplotlib`
-  - `seaborn`
-  - `scipy`
-  - `sklearn`
+  - `matplotlib==3.9.2`
+  - `numpy==1.26.4`
+  - `networkx==3.3`
+  - `pandas==2.2.2`
+  - `seaborn==0.13.2`
+  - `scipy==1.13.1`
+  - `sklearn==1.5.1`
 
-### Instructions
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/brain-cognitive-analysis.git
-   cd brain-cognitive-analysis
